@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/security
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+
+  profiles:
+    include: oauth
+
+  main:
+    allow-bean-definition-overriding: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 322996784561-a2g3aqd2sa51ms0vvj36anu7e3j90ghk.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+logging:
+  level:
+    org.hibernate.sql: debug
