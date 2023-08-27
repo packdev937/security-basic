@@ -2,14 +2,12 @@ package com.packdev937.securitybasic.config;
 
 import com.packdev937.securitybasic.config.oauth.PrincipalOauth2UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -22,7 +20,6 @@ public class SecurityConfig { // 기존에는 WebSecurityConfigurerAdapter 클�
     private final PrincipalOauth2UserService principalOauth2UserService;
 
     private final AuthenticationProvider authenticationProvider;
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
